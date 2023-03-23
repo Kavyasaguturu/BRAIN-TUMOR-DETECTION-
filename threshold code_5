@@ -1,0 +1,11 @@
+close all;
+clc;
+c = imread('medianfinal.png');
+cd = double(c);
+figure, imshow(cd);
+impixelinfo;
+figure, imshow(c);
+impixelinfo;
+c7 = mod(floor(cd / 128), 2);
+figure, imshow(c7),
+title('Threshold');
