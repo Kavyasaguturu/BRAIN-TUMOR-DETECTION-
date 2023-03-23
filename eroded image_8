@@ -1,0 +1,14 @@
+clear all; 
+clc;
+originalI = imread('dilatedfi.PNG');
+se = strel('ball',1,1); 
+erodedI = imerode(originalI,se); figure; 
+imshow(originalI); 
+figure,imshow('m2.jpg'); 
+figure, I=imshow(erodedI); 
+title('ERODED IMAGE'); 
+figure, subplot(2,2,1); 
+imshow('m2.jpg'); 
+title('MRI REPORT'); subplot(3,3,3);
+imshow(erodedI); 
+title('EXTRACTED TUMOR');
