@@ -1,0 +1,19 @@
+clc;
+I = imread('thresoldfinal.png');
+I1 = imtophat(I, strel('disk', 10));
+figure, imshow(I1);
+level = graythresh(I1);
+BW = imbinarize(I1, level);
+figure,imshow(BW);
+C = BW; 
+figure, imshow(C);
+D = bwdist(C);
+D(C) = - Inf;
+L = watershed(D);
+figure, imshow(L);
+W1 = label2rgb(L, 'hot', 'w');
+figure, imshow(W1);
+im = I;
+im(L == 0) = 0;
+figure, imshow(im),
+title('WATERSHED IMAGE');
