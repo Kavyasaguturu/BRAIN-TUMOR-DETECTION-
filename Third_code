@@ -1,0 +1,10 @@
+close all;
+clc;
+a=imread('m2.jpg');
+figure, imshow(a);
+b=im2double(a);
+size(b)
+gray = 0.2989 * b(:,:,1) + 0.5870 * b(:,:,2)+ 0.1140 * b(:,:,3);
+figure,imshow(gray);
+title('Gray');
+size(gray)
